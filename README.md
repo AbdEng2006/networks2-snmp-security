@@ -42,4 +42,4 @@ Installation and compatibility are still to be verified. Run only in an authoriz
 
 Suggested repository name: `networks2-snmp-security`.
 
-The remote repository and visibility have not been configured. No license has been selected. Add reviewed screenshots and actual run instructions once the lab works.
+The [public GitHub repository](https://github.com/AbdEng2006/networks2-snmp-security) is configured as `origin`. No license has been selected. See [Windows setup](docs/windows-setup.md) for verified local tools and commands. Add reviewed screenshots once the lab works.

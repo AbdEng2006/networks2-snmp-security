@@ -5,11 +5,11 @@
 - [x] Read the full assignment and inspect the TCP example table.
 - [x] Prepare README, requirements checklist, Git ignore rules, and line endings.
 - [ ] Confirm individual or pair work and GitHub visibility.
-- [ ] Restore GitHub authentication, create the remote, and push the initial commit.
+- [x] Restore GitHub authentication, create the remote, and push the initial commit.
 - [ ] Locate or install PHP with SNMP support and OpenSSL.
 - [ ] Configure and verify the PC's SNMP agent and permitted write objects.
 
-Initial environment inspection: Git and GitHub CLI are installed. The configured GitHub CLI account is `AbdEng2006`, but authentication reports an invalid token. PHP and OpenSSL were not found on PATH; this does not establish whether they are installed elsewhere.
+GitHub authentication is restored for `AbdEng2006`, and the public remote is configured. Portable PHP and Git's OpenSSL have been located/configured; see [Windows setup](windows-setup.md) for verified versions and remaining agent setup.
 
 ## 2. PHP manager
 
