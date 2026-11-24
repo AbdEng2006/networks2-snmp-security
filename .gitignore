@@ -1,0 +1,24 @@
+# Local assignment materials (keep the instructor's originals on this machine)
+/SnmpSecurityAssignment_Fall2026.pdf
+/sites.bat
+
+# Credentials, personal certificate subjects, and generated cryptographic files
+.env
+.env.*
+!.env.example
+/config/local.php
+*.pem
+*.key
+*.hex
+*.enc
+*.dec
+*.sha256
+/security/output/
+
+# Local tools, temporary files, and evidence awaiting review
+/tmp/
+/tools/
+/vendor/
+*.log
+Thumbs.db
+.DS_Store
