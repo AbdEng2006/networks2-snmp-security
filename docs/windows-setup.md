@@ -9,7 +9,7 @@
 - The downloaded ZIP was checked against the SHA-256 in the official Windows PHP release manifest.
 - `php_snmp.dll` is included and can be loaded with the local `php.ini`.
 - Git's OpenSSL executable reports OpenSSL 3.2.4.
-- The SNMP Agent service was not found. `SNMPTrap` alone is not the agent.
+- The Windows SNMP Agent is installed and running. A live SNMP v2c read of `sysDescr.0` from `127.0.0.1` succeeded using PHP.
 
 ## PHP commands
 
@@ -37,4 +37,13 @@ OpenSSL is not on the current PATH. Script integration and cryptographic round-t
 
 ## Next: Windows SNMP Agent
 
-Windows capability inspection requires an elevated administrator session on this machine. Installation, community configuration, and live read/write checks have not been performed. Keep any selected community string out of committed documentation.
+The agent is installed and the local READ WRITE community is saved in ignored `config/local.php`. Its value is intentionally omitted here. A live read has passed; writes have not yet been tested.
+
+For a new workstation, configure a READ WRITE community in the SNMP Service and restrict accepted managers to `127.0.0.1`. Save the matching PHP configuration with:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\configure-snmp.ps1
+.\scripts\php.bat scripts/check-snmp.php
+```
+
+The setup prompt hides input. The local file contains a reversible base64 representation for safe PHP string embedding, not encryption. Do not share or commit it. The check reads numeric OID `1.3.6.1.2.1.1.1.0` and returns a nonzero exit status on failure. In the Codex sandbox, the network read failed; the same check succeeded outside the sandbox.
