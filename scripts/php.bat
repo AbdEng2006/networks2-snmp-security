@@ -6,7 +6,9 @@ if not exist "%PHP_HOME%\php.exe" (
     exit /b 1
 )
 rem The assignment uses numeric OIDs; do not load unavailable named MIBs.
-set "MIBS=:"
+if not exist "%PHP_HOME%\mibs" mkdir "%PHP_HOME%\mibs"
+set "MIBDIRS=%PHP_HOME%\mibs"
+set "MIBS=ALL"
 pushd "%~dp0.."
 "tools\php\php.exe" -c "tools\php\php.ini" %*
 set "PHP_EXIT=%errorlevel%"
