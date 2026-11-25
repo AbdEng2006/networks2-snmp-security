@@ -11,7 +11,24 @@
 - Git's OpenSSL executable reports OpenSSL 3.2.4.
 - The Windows SNMP Agent is installed and running. A live SNMP v2c read of `sysDescr.0` from `127.0.0.1` succeeded using PHP.
 
-## PHP commands
+## IntelliJ IDEA
+
+The IDE's browser preview on port 63342 needs a configured PHP CLI interpreter. If it shows `502 Bad Gateway` and `PHP Interpreter is not configured`, configure the interpreter under **Settings > Languages & Frameworks > PHP**. Use PHP language level **8.5** for this workstation.
+
+This workstation uses an ASCII path alias to the existing portable runtime because PHP did not load the ini file reliably through the original Arabic path:
+
+- Executable: `%LOCALAPPDATA%\Temp\networks2-php-runtime\php.exe`
+- Configuration file: `%LOCALAPPDATA%\Temp\networks2-php.ini`
+
+The runtime alias is a Windows junction to `tools/php`, not a second PHP installation. The IDE-specific ini uses an absolute extension directory. These local paths must be recreated if the temporary directory is cleaned; they are not portable to another workstation. The normal `scripts/php.bat` workflow remains available.
+
+Select **SNMP Lab** in the Run configuration dropdown and press Run. The shared `.run/SNMP Lab.run.xml` starts a PHP built-in server on `127.0.0.1:8081` with `public` as its document root and the project's default PHP interpreter. Open `http://127.0.0.1:8081/` after starting it. Stop it with the IDE's Stop button.
+
+Use this configuration rather than **Current File** or the browser-preview shortcut. The preview URL includes `/HW2/public/index.php`, while the application intentionally accepts `/` or `/index.php`. A 404 on the preview URL is a routing issue, not a failed SNMP connection.
+
+Verification: the IDE recognized PHP 8.5.13, and an equivalent server command using the configured runtime and ini returned HTTP 200 with a live SNMP response. The Run button itself has not yet been verified. IDE-specific `.idea` files are excluded from Git.
+
+## Command-line PHP
 
 From the repository root, use the wrapper so the intended configuration is loaded:
 

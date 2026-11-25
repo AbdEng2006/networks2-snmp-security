@@ -19,6 +19,7 @@
 /tmp/
 /tools/
 /vendor/
+/.idea/
 *.log
 Thumbs.db
 .DS_Store

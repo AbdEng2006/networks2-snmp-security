@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SNMP Lab" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" host="127.0.0.1" port="8081" document_root="$PROJECT_DIR$/public">
+      <envs>
+        <env name="MIBS" value="ALL" />
+        <env name="MIBDIRS" value="$PROJECT_DIR$/tools/php/mibs" />
+      </envs>
+    <method v="2" />
+  </configuration>
+</component>
