@@ -6,7 +6,17 @@ An educational project combining a PHP SNMP manager with Windows Batch scripts f
 
 ## Status
 
-Repository preparation and requirements analysis are complete. Application and script implementation have not started. No live SNMP or cryptography checks have been run.
+The first Arabic web page reads a live `sysDescr.0` response with refresh and error states. PHP-to-agent reads have been verified. Remaining System objects, edits, TCP statistics, and OpenSSL scripts are not implemented yet.
+
+## Run the first page
+
+After completing [Windows setup](docs/windows-setup.md), run from the project root:
+
+```powershell
+.\scripts\php.bat -d display_errors=0 -S 127.0.0.1:8080 -t public
+```
+
+Open `http://127.0.0.1:8080`. Keep the terminal open; use `Ctrl+C` to stop. See the [Arabic lesson](docs/lesson-01-web-description.md) for a beginner explanation of each file and the request flow.
 
 ## Planned deliverables
 
