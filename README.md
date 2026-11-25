@@ -6,7 +6,7 @@ An educational project combining a PHP SNMP manager with Windows Batch scripts f
 
 ## Status
 
-The first Arabic web page reads a live `sysDescr.0` response with refresh and error states. PHP-to-agent reads have been verified. Remaining System objects, edits, TCP statistics, and OpenSSL scripts are not implemented yet.
+The first English web page reads a live `sysDescr.0` response with refresh and error states. PHP-to-agent reads have been verified. Remaining System objects, edits, TCP statistics, and OpenSSL scripts are not implemented yet.
 
 ## Run the first page
 

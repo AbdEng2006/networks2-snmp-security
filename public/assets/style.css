@@ -16,7 +16,7 @@ body {
     margin:0;
     background:var(--bg);
     color:var(--ink);
-    font-family:Tahoma,"Segoe UI",sans-serif;
+    font-family:"Segoe UI",Tahoma,sans-serif;
     font-size:14px;
     line-height:1.7;
 }
@@ -86,7 +86,7 @@ main {
     direction:ltr;
     display:flex;
     align-items:center;
-    justify-content:flex-end;
+    justify-content:flex-start;
     gap:12px;
     font:11px monospace;
     letter-spacing:1.5px;
