@@ -4,24 +4,28 @@
 
 - [x] Read the full assignment and inspect the TCP example table.
 - [x] Prepare README, requirements checklist, Git ignore rules, and line endings.
-- [ ] Confirm individual or pair work and GitHub visibility.
+- [x] Confirm pair work and public GitHub visibility; final task allocation remains proposed.
 - [x] Restore GitHub authentication, create the remote, and push the initial commit.
-- [ ] Locate or install PHP with SNMP support and OpenSSL.
-- [ ] Configure and verify the PC's SNMP agent and permitted write objects.
+- [x] Locate or install PHP with SNMP support and OpenSSL.
+- [x] Configure the PC's SNMP agent and verify a live description read.
+- [ ] Verify permitted write objects with readback and restoration.
 
 GitHub authentication is restored for `AbdEng2006`, and the public remote is configured. Portable PHP and Git's OpenSSL have been located/configured; see [Windows setup](windows-setup.md) for verified versions and remaining agent setup.
 
 ## 2. PHP manager
 
-Use plain PHP initially; no framework is required by the assignment. Keep SNMP access separate from presentation. Provide an example configuration and ignore the real host/community configuration.
+The current implementation uses plain PHP, an ignored connection configuration, and separate CSS/JavaScript assets. Request handling and the HTML template are intentionally colocated in `public/index.php` for this first learning step. Extract shared SNMP access when more pages need it; no framework is required.
 
 Implement and verify in this order:
 
-1. Read one System object from the live agent.
-2. Display the six requested System objects.
-3. Add validated POST forms for contact, name, and location; display write failures and reread successful changes.
-4. Add the TCP array and `snmp2_get()` loop, skipping ID 13.
-5. Apply consistent styling, clear loading/error states, HTML escaping, and form protection.
+- [x] Read `sysDescr.0` from the live agent through the CLI.
+- [x] Display the description in an English responsive web page with refresh, success/error feedback, escaped output, and timestamps.
+- [x] Configure IntelliJ execution; the student confirmed successful startup.
+- [x] Document PHP/HTML concepts and the request flow in English.
+- [ ] Display all six requested System objects.
+- [ ] Add validated POST forms for contact, name, and location, including form protection, failure handling, and readback.
+- [ ] Add the TCP array and `snmp2_get()` loop, skipping ID 13.
+- [ ] Verify the full interface and write flows with the second student.
 
 ## 3. OpenSSL scripts
 
